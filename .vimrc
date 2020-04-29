@@ -24,4 +24,5 @@ Plug 'tpope/vim-commentary'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
