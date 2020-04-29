@@ -240,6 +240,7 @@ bindsym $mod+r mode "restore"
 
 # bindsym $mod+r exec urxvt -e ranger
 bindsym $mod+p exec urxvt -e pipes.sh -t4
+bindsym $mod+m exec urxvt -e mutt
 focus_follows_mouse no
 for_window [class="^.*"] border pixel 1
 hide_edge_borders vertical
