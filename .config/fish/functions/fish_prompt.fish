@@ -28,3 +28,7 @@ function fish_prompt --description 'Write out the prompt, prepending the Debian 
 
     end
 end
+
+
+function fish_greeting
+end
