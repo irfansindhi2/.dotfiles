@@ -1,4 +1,5 @@
 syntax on
+set t_Co=256
 set number
 set clipboard=unnamedplus
 noremap <Leader>y "*y
@@ -25,4 +26,5 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
+Plug 'chrisbra/Colorizer'
 call plug#end()
