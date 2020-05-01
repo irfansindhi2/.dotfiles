@@ -16,7 +16,7 @@ set $mod Mod1
 font:TamzenforPowerline 
 
 #Wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/space.jpg
+exec --no-startup-id feh --recursive --bg-fill ~/Pictures/Wallpapers/green_tree.jpg
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -90,7 +90,7 @@ bindsym $mod+b split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+F1 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -175,10 +175,10 @@ mode "resize" {
 # back to normal: Enter or Escape or $mod+r
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
-		bindsym $mod+c mode "default"
+		bindsym $mod+a mode "default"
 }
 
-bindsym $mod+c mode "resize"
+bindsym $mod+a mode "resize"
 
 
 set $i3_resurrect i3-resurrect
@@ -232,25 +232,26 @@ mode "restore" {
   # Back to normal: Enter, Escape, or n
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym n mode "default"
-  bindsym $mod+n mode "default"
+  bindsym r mode "default"
+  bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "restore"
 
 # bindsym $mod+r exec urxvt -e ranger
-bindsym $mod+p exec urxvt -e pipes.sh -t4
+bindsym $mod+p exec polychromatic-controller
 bindsym $mod+m exec urxvt -e mutt
+bindsym $mod+c exec urxvt -e calcurse
+bindsym $mod+f exec firefox
 focus_follows_mouse no
-for_window [class="^.*"] border pixel 1
-hide_edge_borders vertical
+for_window [class="^.*"] border pixel 0
 exec picom --config ~/.config/picom/picom.conf
 bindsym $mod+Shift+s exec scrot ~/Pictures/Scrot/%Y-%m-%d-%H-%M-%S.png –quality 100
 
-# class                 border  backgr. text    indicator child_border                                                                     
-client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340                                                                            
-client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340                                                                            
-client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #d9d9d9       
+# # class                 border  backgr. text    indicator child_border                                                                     
+# client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340                                                                            
+# client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340                                                                            
+# client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #d9d9d9       
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
