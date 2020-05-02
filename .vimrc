@@ -12,6 +12,8 @@ set completeopt-=preview
 set ts=4 sw=4
 command! -nargs=0 Sw w !sudo tee % > /dev/null
 map <C-n> :NERDTreeToggle<CR>
+set t_Co=16
+let &t_Co = 16
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
