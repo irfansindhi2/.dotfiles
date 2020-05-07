@@ -1,4 +1,8 @@
 syntax on
+set nocompatible
+filetype plugin on
+set splitright
+autocmd VimResized * wincmd =
 set t_Co=256
 set number
 set clipboard=unnamedplus
@@ -14,6 +18,9 @@ command! -nargs=0 Sw w !sudo tee % > /dev/null
 map <C-n> :NERDTreeToggle<CR>
 set t_Co=16
 let &t_Co = 16
+let mapleader = " "
+let g:vimwiki_list = [{ 'path': '~/Documents/notes/',
+       \ 'syntax':'markdown', 'ext': '.md' }]
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
@@ -29,4 +36,5 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
+Plug 'vimwiki/vimwiki'
 call plug#end()

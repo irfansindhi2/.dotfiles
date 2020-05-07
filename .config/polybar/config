@@ -234,10 +234,10 @@ format-connected-underline = #248232
 label-connected =  %essid%
 
 ; format-disconnected =
-format-disconnected = - <label-disconnected>
+format-disconnected = <label-disconnected>
 format-disconnected-underline = #248232
 ; format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected =  disconnected
+label-disconnected =  -disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
