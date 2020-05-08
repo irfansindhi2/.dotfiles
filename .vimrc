@@ -1,9 +1,9 @@
 syntax on
 set nocompatible
 filetype plugin on
+set modifiable
 set splitright
 autocmd VimResized * wincmd =
-set t_Co=256
 set number
 set clipboard=unnamedplus
 noremap <Leader>y "*y
@@ -37,4 +37,5 @@ Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
 Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-obsession'
 call plug#end()

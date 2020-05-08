@@ -18,15 +18,15 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #040f0f
-background-alt = #345945
+background = #141314
+background-alt = #141314
 ;foreground = ${xrdb:color7:#222}
-foreground = #6ac100
-foreground-alt = #6ac100
-primary = #6ac100
-secondary = #e60053
+foreground = #ccc2a6
+foreground-alt = #ccc2a6
+primary = #ccc2a6
+secondary = #70473a
 alert = #bd2c40
-underline = #248232; 
+underline = #70473a; 
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -52,14 +52,14 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = TamzenforPowerline-20
-font-1 = FontAwesome5Free:style=Solid:size=10;4
-font-2 = FontAwesome5Free:style=Regular:size=10;4
-font-3 = FontAwesome5Brands:style=Regular:size=10;4
+font-0 = TamzenforPowerline-14
+font-1 = FontAwesome5Free:style=Solid:size=8;4
+font-2 = FontAwesome5Free:style=Regular:size=8;4
+font-3 = FontAwesome5Brands:style=Regular:size=8;4
 ; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ; font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = date 
 modules-right = alsa wlan battery
 
@@ -140,6 +140,7 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+; strip-wsnumbers = true
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
@@ -149,23 +150,23 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -229,13 +230,15 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected =  <label-connected>
-format-connected-underline = #248232
-label-connected =  %essid%
+format-connected = wifi <label-connected>
+; format-connected-underline = #70473a
+; label-connected =  %essid%
+label-connected = %essid%
+label-connected-foreground = ${colors.secondary}
 
 ; format-disconnected =
 format-disconnected = <label-disconnected>
-format-disconnected-underline = #248232
+format-disconnected-underline = #70473a
 ; format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected =  -disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
@@ -309,10 +312,11 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/alsa]
 type = internal/alsa
 
-format-volume-underline = #248232
-format-volume = <ramp-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
+; format-volume-underline = #70473a
+; format-volume = <ramp-volume>
+format-volume = volume <label-volume> 
+label-volume = %percentage%% 
+label-volume-foreground = ${colors.secondary}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
@@ -347,15 +351,23 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-charging = + <label-charging>
-format-charging-underline = #248232
+; format-charging = + <label-charging>
+format-charging = charging at <label-charging>
+label-charging =  %percentage%%
+format-charging-foreground = ${colors.secondary}
+; format-charging-underline = #70473a
 
-format-discharging = - <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+; format-discharging = - <label-discharging>
+format-discharging = discharging at <label-discharging>
+label-discharging =  %percentage%%
+label-discharging-foreground = ${colors.secondary}
+; format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+; format-full-prefix = " "
+format-full-prefix = "full at "
+label-full =  %percentage%%
+label-full-foreground = ${colors.secondary}
+; format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 

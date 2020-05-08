@@ -1,5 +1,4 @@
-urxvt.font:xft:TamzenForPowerline-20
-URxvt*font:xft:FontAwesome
+urxvt.font:xft:TamzenForPowerline-14
 urxvt.iso14755: false
 urxvt.iso14755_52: false
 urxvt.scrollBar: false
@@ -24,40 +23,33 @@ urxvt.scrollBar: false
 /* *.color7:     #BFBFBF */
 
 
-# Green
-! special
-*.foreground:   #6ac100
-*.background:   #040f0f
-*.cursorColor:  #6ac100
 
-! black
-*.color0:       #040f0f
-*.color8:       #00bb00
 
-! red
-*.color1:       #007700
-*.color9:       #007700
 
-! green
-*.color2:       #248232
-*.color10:      #2ba84a
-
-! yellow
-*.color3:       #248232
-*.color11:      #007700
-
-! blue
-*.color4:       #009900
-*.color12:      #009900
-
-! magenta
-*.color5:       #00bb00
-*.color13:      #00bb00
-
-! cyan
-*.color6:       #005500
-*.color14:      #005500
-
-! white
-*.color7:       #345945
-*.color15:      #6ac100
+*background: #141314
+*foreground: #ccc2a6
+!black
+*color0:    #322a2c
+*color8:    #46423b
+!red
+*color1:    #70473a
+*color9:    #916255
+!green
+*color2:    #534d35
+*color10:   #858167
+!yellow
+*color3:    #9c7650
+!*color3:    #9c7650
+*color11:   #ad8650
+!blue
+*color4:    #473e38
+*color12:   #75715e
+!magenta
+*color5:    #543b3b
+*color13:   #6b5d51
+!cyan
+*color6:    #332425
+*color14:   #585858
+!white
+*color7:    #9a875f
+*color15:   #917154
