@@ -83,9 +83,9 @@ DISABLE_AUTO_UPDATE="true"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -140,7 +140,20 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/irfan/.zshrc'
+# End of lines added by compinstall
+
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+
+# export TERM=rxvt
+alias vim="nvim"
+alias vi="nvim"
+
+# append
+path+=('/home/irfan/dev/app/flutter/bin')
+path+=('/opt/android-sdk/platform-tools')
+path+=('/opt/android-sdk/tools')
+export PATH
+
+

@@ -237,10 +237,12 @@ label-connected = %essid%
 label-connected-foreground = ${colors.secondary}
 
 ; format-disconnected =
-format-disconnected = <label-disconnected>
+format-disconnected = wifi <label-disconnected>
+label-disconnected-foreground = ${colors.secondary}
 format-disconnected-underline = #70473a
 ; format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected =  -disconnected
+label-disconnected = -disconnected
+; label-disconnected =  -disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
